@@ -16,6 +16,8 @@ all_puml_content = """@startuml
 !define ENTITY_BORDER_COLOR #FF9900
 !define ENTITY_SYMBOL_COLOR ENTITY_COLOR
 
+!define TECHN_FONT_SIZE 12
+
 skinparam defaultTextAlignment center
 
 skinparam wrapWidth 200
@@ -44,12 +46,18 @@ skinparam participant<<stereo>> {
 rectangle "==e_label\\n<color:e_color><$e_sprite></color>\\n" <<e_stereo>> as e_alias
 !enddefinelong
 
+!definelong EntityWithNote(e_alias, e_label, e_note, e_color, e_sprite, e_stereo)
+rectangle "==e_label\\n<color:e_color><$e_sprite></color>\\n//<size:TECHN_FONT_SIZE>[e_note]</size>//" <<e_stereo>> as e_alias
+!enddefinelong
+
 """
 
 template = """' START entity_name
 $image_content
 EntityColoring($entity_name)
 !define $entity_name(e_alias, e_label) Entity(e_alias, e_label, #232F3E, $entity_name, $entity_name)
+
+!define ${entity_name}WithNote(e_alias, e_label, e_note) EntityWithNote(e_alias, e_label, e_note, #232F3E, $entity_name, $entity_name)
 
 ' END entity_name
 

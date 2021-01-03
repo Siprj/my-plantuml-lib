@@ -5,6 +5,8 @@
 !define ENTITY_BORDER_COLOR #FF9900
 !define ENTITY_SYMBOL_COLOR ENTITY_COLOR
 
+!define TECHN_FONT_SIZE 12
+
 skinparam defaultTextAlignment center
 
 skinparam wrapWidth 200
@@ -33,6 +35,10 @@ skinparam participant<<stereo>> {
 rectangle "==e_label\n<color:e_color><$e_sprite></color>\n" <<e_stereo>> as e_alias
 !enddefinelong
 
+!definelong EntityWithNote(e_alias, e_label, e_note, e_color, e_sprite, e_stereo)
+rectangle "==e_label\n<color:e_color><$e_sprite></color>\n//<size:TECHN_FONT_SIZE>[e_note]</size>//" <<e_stereo>> as e_alias
+!enddefinelong
+
 ' START entity_name
 sprite $modem [256x124/16z] {
 vD27WS0W3CLG0KvF_FUVzZhbsWBuRI3nNTakpSkljV2_lBkcvtlcJtOhYAlmIpuLo9duhhX2UJ8ZKpX6jqYH1vX2Adnv5DB3fqD1xRmh6ZsxPIQLbyCroW2t
@@ -48,6 +54,8 @@ whx5ToPCyx--9ywKlyUwq63g1f2kC5Noluga9iXWckCZaoJEtV_OZzP6HogDTvfMqb_zhpy2
 
 EntityColoring(modem)
 !define modem(e_alias, e_label) Entity(e_alias, e_label, #232F3E, modem, modem)
+
+!define modemWithNote(e_alias, e_label, e_note) EntityWithNote(e_alias, e_label, e_note, #232F3E, modem, modem)
 
 ' END entity_name
 
@@ -93,6 +101,8 @@ zDTYN4Wvb-EejVK-c4VlhTRZA3cdu6vN_Xy
 EntityColoring(router)
 !define router(e_alias, e_label) Entity(e_alias, e_label, #232F3E, router, router)
 
+!define routerWithNote(e_alias, e_label, e_note) EntityWithNote(e_alias, e_label, e_note, #232F3E, router, router)
+
 ' END entity_name
 
 ' START entity_name
@@ -125,6 +135,8 @@ mDSKJb63q_SEWczbYLvE00xLfVqDyDE7Euv0Ru02VkAez-sy3_7tDJ-rtNJTzMAW6Bo_YE3Vy1B_5m
 EntityColoring(server)
 !define server(e_alias, e_label) Entity(e_alias, e_label, #232F3E, server, server)
 
+!define serverWithNote(e_alias, e_label, e_note) EntityWithNote(e_alias, e_label, e_note, #232F3E, server, server)
+
 ' END entity_name
 
 ' START entity_name
@@ -147,6 +159,8 @@ qEsbYPJnvBT1o4oc_0ACP4zqHDpikR8GyCQIrDHLttotBovj5dl7FhYiiTi7v3QveDcoVLGwsgsFkRY0
 
 EntityColoring(switch)
 !define switch(e_alias, e_label) Entity(e_alias, e_label, #232F3E, switch, switch)
+
+!define switchWithNote(e_alias, e_label, e_note) EntityWithNote(e_alias, e_label, e_note, #232F3E, switch, switch)
 
 ' END entity_name
 
