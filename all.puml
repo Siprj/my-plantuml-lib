@@ -106,5 +106,20 @@ EntityColoring(switch)
 
 ' END entity_name
 
+' START entity_name
+sprite $printer [64x64/16z] {
+xTPLUiGm301XIVQNEEIv_scBonjGLMupx_-2MKxfWBDUPQO9TzCCD-YBgnxitcSGPv3VwTE7-DtlVlVQLaBLzfbR9LmrqGfZ2JL2rG99WcKe4uE46vcWY3zB
+yfmcbUSAlCatC3x91AI81sX41g2F-Fhg-wXlO1IHLAaMyQA7kSuY5pxSfTzz7d4rvbdVuAwPyGfqnL47wBqtoEvjRvS-Sdv-djUqacrwOpNzR2-QLphz_jys
+_kRrndpw6Tu__ek_VsACZz_8LA14VOPokl_xWxULnN_eS50CKFNy_fWRl_anl7n_Y6WxnFpGwipxo_9Ijhy_Pttu_3uKlZyEHUwlkV9GSLI7V84U0G
+}
+
+
+EntityColoring(printer)
+!define printer(e_alias, e_label) Entity(e_alias, e_label, #232F3E, printer, printer)
+
+!define printerWithNote(e_alias, e_label, e_note) EntityWithNote(e_alias, e_label, e_note, #232F3E, printer, printer)
+
+' END entity_name
+
 
 @enduml
